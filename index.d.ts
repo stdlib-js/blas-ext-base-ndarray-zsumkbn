@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,28 +16,36 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { complex128ndarray } from '@stdlib/types/ndarray';
+import { Complex128 } from '@stdlib/types/complex';
 
 /**
-* Compute the sum of all elements in a one-dimensional double-precision complex floating-point ndarray using an improved Kahan–Babuška algorithm.
+* Computes the sum of all elements in a one-dimensional double-precision complex floating-point ndarray using an improved Kahan–Babuška algorithm.
 *
-* @module @stdlib/blas-ext-base-ndarray-zsumkbn
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns sum
 *
 * @example
 * var Complex128Vector = require( '@stdlib/ndarray-vector-complex128' );
-* var zsumkbn = require( '@stdlib/blas-ext-base-ndarray-zsumkbn' );
 *
 * var x = new Complex128Vector( [ 1.0, 3.0, 4.0, 2.0 ] );
 *
 * var v = zsumkbn( [ x ] );
 * // returns <Complex128>[ 5.0, 5.0 ]
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function zsumkbn( arrays: [ complex128ndarray ] ): Complex128;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = zsumkbn;
